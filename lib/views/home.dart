@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:onehand/views/profil-edit-setting.dart';
 import 'package:onehand/views/profil.dart';
 
 class Home extends StatelessWidget {
@@ -7,17 +8,19 @@ class Home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
-        child: RaisedButton(
-          child: Text("Login!"),
-          onPressed: () {
-            //PUSH REPLACEMENT BERARTI KITA AKAN MENGGAHAPUS ATAU MENGGANTI PAGE YANG PERTAMA TERSEBUT
-            Navigator.pushReplacement(context,
-                MaterialPageRoute(builder: (context) {
-              return Profil();
-            }));
-          },
-        ),
+      body: Row(
+        children: [
+          RaisedButton(
+            child: Text("Profil Routes"),
+            onPressed: () {
+              //PUSH REPLACEMENT BERARTI KITA AKAN MENGGAHAPUS ATAU MENGGANTI PAGE YANG PERTAMA TERSEBUT
+              Navigator.pushReplacement(context,
+                  MaterialPageRoute(builder: (context) {
+                return Profil_Edit();
+              }));
+            },
+          ),
+        ],
       ),
     );
   }
