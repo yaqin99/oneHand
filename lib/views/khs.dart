@@ -251,81 +251,117 @@ class Khs extends StatelessWidget {
                             ),
                           ],
                         ),
-                        Row(
-                          children: [
-                            Container(
-                              decoration: BoxDecoration(
-                                  color: Color.fromARGB(255, 227, 244, 255),
-                                  borderRadius: BorderRadius.circular(10)),
-                              child: Padding(
-                                padding: const EdgeInsets.all(13),
-                                child: Column(
-                                  children: [
-                                    Container(
-                                      decoration: BoxDecoration(),
-                                      width: MediaQuery.of(context).size.width *
-                                          0.055,
-                                      height:
-                                          MediaQuery.of(context).size.height *
-                                              0.03,
-                                      child: Container(
-                                        decoration: BoxDecoration(
-                                            color: Colors.blue[600],
-                                            borderRadius:
-                                                BorderRadius.circular(3.5)),
-                                        child: Center(
-                                          child: Text(
-                                            'A',
-                                            style: TextStyle(
-                                                color: Colors.white,
-                                                fontWeight: FontWeight.bold),
+                        Container(
+                          child: Column(
+                            children: [
+                              Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: [
+                                  Container(
+                                    decoration: BoxDecoration(
+                                        color:
+                                            Color.fromARGB(255, 227, 244, 255),
+                                        borderRadius:
+                                            BorderRadius.circular(10)),
+                                    child: Padding(
+                                      padding: const EdgeInsets.all(13),
+                                      child: Column(
+                                        children: [
+                                          Container(
+                                            decoration: BoxDecoration(),
+                                            width: MediaQuery.of(context)
+                                                    .size
+                                                    .width *
+                                                0.055,
+                                            height: MediaQuery.of(context)
+                                                    .size
+                                                    .height *
+                                                0.03,
+                                            child: Container(
+                                              decoration: BoxDecoration(
+                                                  color: Colors.blue[600],
+                                                  borderRadius:
+                                                      BorderRadius.circular(
+                                                          3.5)),
+                                              child: Center(
+                                                child: Text(
+                                                  'A',
+                                                  style: TextStyle(
+                                                      color: Colors.white,
+                                                      fontWeight:
+                                                          FontWeight.bold),
+                                                ),
+                                              ),
+                                            ),
                                           ),
-                                        ),
+                                          Text('Perfect',
+                                              style: TextStyle(
+                                                color: Colors.blue[600],
+                                              ))
+                                        ],
                                       ),
                                     ),
-                                    Text('Perfect',
-                                        style: TextStyle(
-                                          color: Colors.blue[600],
-                                        ))
-                                  ],
-                                ),
-                              ),
-                            ),
-                            Container(
-                              width: MediaQuery.of(context).size.width * 0.7,
-                              child: Column(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceEvenly,
-                                children: [
-                                  Text(
-                                    'Seminar Masalah - masalah Administrasi Publik',
-                                    style:
-                                        TextStyle(fontWeight: FontWeight.bold),
                                   ),
-                                  Row(
-                                    children: [
-                                      Container(
-                                        width:
-                                            MediaQuery.of(context).size.width *
-                                                0.18,
-                                        height:
-                                            MediaQuery.of(context).size.height *
-                                                0.02,
-                                        decoration: BoxDecoration(
-                                            color: Color.fromARGB(
-                                                255, 252, 245, 234)),
-                                        child: Text(
-                                          'MUTU : 0.0',
+                                  Container(
+                                    height: MediaQuery.of(context).size.height *
+                                        0.08,
+                                    decoration: BoxDecoration(),
+                                    width:
+                                        MediaQuery.of(context).size.width * 0.7,
+                                    child: Column(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.spaceBetween,
+                                      children: [
+                                        Text(
+                                          'Seminar Masalah - masalah Administrasi Publik',
                                           style: TextStyle(
-                                              color: Colors.orange[400]),
+                                              fontWeight: FontWeight.bold),
                                         ),
-                                      )
-                                    ],
+                                        Row(
+                                          children: [
+                                            Container(
+                                              width: MediaQuery.of(context)
+                                                      .size
+                                                      .width *
+                                                  0.2,
+                                              height: MediaQuery.of(context)
+                                                      .size
+                                                      .height *
+                                                  0.025,
+                                              decoration: BoxDecoration(
+                                                  borderRadius:
+                                                      BorderRadius.circular(3),
+                                                  color: Color.fromARGB(
+                                                      255, 249, 239, 221)),
+                                              child: Center(
+                                                child: Text(
+                                                  'MUTU : 0.0',
+                                                  style: TextStyle(
+                                                      fontSize: 12.5,
+                                                      color: Colors.amber[700]),
+                                                ),
+                                              ),
+                                            ),
+                                            Container(
+                                              margin: EdgeInsets.only(left: 10),
+                                              child: Text(
+                                                '3 SKS',
+                                                style: TextStyle(
+                                                    fontSize: 12,
+                                                    color: Colors.grey[400]),
+                                              ),
+                                            )
+                                          ],
+                                        )
+                                      ],
+                                    ),
                                   )
                                 ],
                               ),
-                            )
-                          ],
+                              Divider()
+                            ],
+                          ),
                         ),
                       ],
                     ),
