@@ -39,12 +39,30 @@ class Khs extends StatelessWidget {
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
                               Container(
-                                width: MediaQuery.of(context).size.width * 0.35,
+                                width: MediaQuery.of(context).size.width * 0.6,
                                 child: Row(
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
                                   children: [
-                                    Icon(Icons.arrow_back_outlined),
+                                    ElevatedButton(
+                                        style: ButtonStyle(
+                                          backgroundColor:
+                                              MaterialStateProperty.all(Colors
+                                                  .white
+                                                  .withOpacity(0.0)),
+                                          shadowColor:
+                                              MaterialStateProperty.all(Colors
+                                                  .white
+                                                  .withOpacity(0.0)),
+                                        ),
+                                        onPressed: () {},
+                                        child: Stack(
+                                          alignment: Alignment.centerLeft,
+                                          children: [
+                                            Icon(
+                                              Icons.arrow_back_outlined,
+                                              color: Colors.black,
+                                            ),
+                                          ],
+                                        )),
                                     Text('Kartu Hasil Studi',
                                         style: TextStyle(
                                             fontWeight: FontWeight.bold)),
@@ -72,6 +90,7 @@ class Khs extends StatelessWidget {
                               'Gasal - 1920',
                               style: TextStyle(
                                   color: Colors.black,
+                                  fontSize: 15,
                                   fontWeight: FontWeight.bold),
                             )
                           ],
@@ -111,7 +130,14 @@ class Khs extends StatelessWidget {
                                     ),
                                     Container(
                                       decoration: BoxDecoration(
-                                          color: Colors.lightBlue[200],
+                                          gradient: LinearGradient(
+                                              begin: Alignment.bottomRight,
+                                              end: Alignment.topLeft,
+                                              colors: [
+                                                Colors.lightBlue,
+                                                Color.fromARGB(
+                                                    255, 134, 216, 253),
+                                              ]),
                                           borderRadius:
                                               BorderRadius.circular(5.0),
                                           boxShadow: [
@@ -242,14 +268,18 @@ class Khs extends StatelessWidget {
                         BoxDecoration(color: Colors.white.withOpacity(0.0)),
                     child: Column(
                       children: [
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.start,
-                          children: [
-                            Text(
-                              'Daftar Nilai',
-                              style: TextStyle(fontWeight: FontWeight.bold),
-                            ),
-                          ],
+                        Padding(
+                          padding: EdgeInsets.only(top: 10, bottom: 10),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            children: [
+                              Text(
+                                'Daftar Nilai',
+                                style: TextStyle(
+                                    fontWeight: FontWeight.bold, fontSize: 16),
+                              ),
+                            ],
+                          ),
                         ),
                         Container(
                           child: Column(
@@ -259,48 +289,60 @@ class Khs extends StatelessWidget {
                                     MainAxisAlignment.spaceBetween,
                                 children: [
                                   Container(
+                                    width: MediaQuery.of(context).size.width *
+                                        0.175,
+                                    height: MediaQuery.of(context).size.height *
+                                        0.09,
                                     decoration: BoxDecoration(
                                         color:
                                             Color.fromARGB(255, 227, 244, 255),
                                         borderRadius:
                                             BorderRadius.circular(10)),
-                                    child: Padding(
-                                      padding: const EdgeInsets.all(13),
-                                      child: Column(
-                                        children: [
-                                          Container(
-                                            decoration: BoxDecoration(),
-                                            width: MediaQuery.of(context)
-                                                    .size
-                                                    .width *
-                                                0.055,
-                                            height: MediaQuery.of(context)
-                                                    .size
-                                                    .height *
-                                                0.03,
-                                            child: Container(
-                                              decoration: BoxDecoration(
-                                                  color: Colors.blue[600],
-                                                  borderRadius:
-                                                      BorderRadius.circular(
-                                                          3.5)),
-                                              child: Center(
-                                                child: Text(
-                                                  'A',
-                                                  style: TextStyle(
-                                                      color: Colors.white,
-                                                      fontWeight:
-                                                          FontWeight.bold),
-                                                ),
+                                    child: Column(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.center,
+                                      children: [
+                                        Spacer(
+                                          flex: 3,
+                                        ),
+                                        Container(
+                                          decoration: BoxDecoration(),
+                                          width: MediaQuery.of(context)
+                                                  .size
+                                                  .width *
+                                              0.055,
+                                          height: MediaQuery.of(context)
+                                                  .size
+                                                  .height *
+                                              0.03,
+                                          child: Container(
+                                            decoration: BoxDecoration(
+                                                color: Colors.blue[600],
+                                                borderRadius:
+                                                    BorderRadius.circular(3.5)),
+                                            child: Center(
+                                              child: Text(
+                                                'A',
+                                                style: TextStyle(
+                                                    color: Colors.white,
+                                                    fontWeight:
+                                                        FontWeight.bold),
                                               ),
                                             ),
                                           ),
-                                          Text('Perfect',
-                                              style: TextStyle(
-                                                color: Colors.blue[600],
-                                              ))
-                                        ],
-                                      ),
+                                        ),
+                                        Spacer(
+                                          flex: 1,
+                                        ),
+                                        Text('PERFECT',
+                                            style: TextStyle(
+                                              color: Colors.blue[600],
+                                              fontSize: 11,
+                                            )),
+                                        Spacer(
+                                          flex: 3,
+                                        ),
+                                      ],
                                     ),
                                   ),
                                   Container(
@@ -312,9 +354,880 @@ class Khs extends StatelessWidget {
                                     child: Column(
                                       mainAxisAlignment:
                                           MainAxisAlignment.spaceBetween,
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
                                       children: [
                                         Text(
                                           'Seminar Masalah - masalah Administrasi Publik',
+                                          style: TextStyle(
+                                              fontWeight: FontWeight.bold),
+                                        ),
+                                        Row(
+                                          children: [
+                                            Container(
+                                              width: MediaQuery.of(context)
+                                                      .size
+                                                      .width *
+                                                  0.2,
+                                              height: MediaQuery.of(context)
+                                                      .size
+                                                      .height *
+                                                  0.025,
+                                              decoration: BoxDecoration(
+                                                  borderRadius:
+                                                      BorderRadius.circular(3),
+                                                  color: Color.fromARGB(
+                                                      255, 249, 239, 221)),
+                                              child: Center(
+                                                child: Text(
+                                                  'MUTU : 0.0',
+                                                  style: TextStyle(
+                                                      fontSize: 12.5,
+                                                      color: Colors.amber[700]),
+                                                ),
+                                              ),
+                                            ),
+                                            Container(
+                                              margin: EdgeInsets.only(left: 10),
+                                              child: Text(
+                                                '3 SKS',
+                                                style: TextStyle(
+                                                    fontSize: 12,
+                                                    color: Colors.grey[400]),
+                                              ),
+                                            )
+                                          ],
+                                        )
+                                      ],
+                                    ),
+                                  )
+                                ],
+                              ),
+                              Divider()
+                            ],
+                          ),
+                        ),
+                        Container(
+                          child: Column(
+                            children: [
+                              Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: [
+                                  Container(
+                                    width: MediaQuery.of(context).size.width *
+                                        0.175,
+                                    height: MediaQuery.of(context).size.height *
+                                        0.09,
+                                    decoration: BoxDecoration(
+                                        color:
+                                            Color.fromARGB(255, 240, 249, 248),
+                                        borderRadius:
+                                            BorderRadius.circular(10)),
+                                    child: Column(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.center,
+                                      children: [
+                                        Spacer(
+                                          flex: 3,
+                                        ),
+                                        Container(
+                                          decoration: BoxDecoration(),
+                                          width: MediaQuery.of(context)
+                                                  .size
+                                                  .width *
+                                              0.055,
+                                          height: MediaQuery.of(context)
+                                                  .size
+                                                  .height *
+                                              0.03,
+                                          child: Container(
+                                            decoration: BoxDecoration(
+                                                color: Color.fromARGB(
+                                                    255, 120, 236, 223),
+                                                borderRadius:
+                                                    BorderRadius.circular(3.5)),
+                                            child: Center(
+                                              child: Text(
+                                                'AB',
+                                                style: TextStyle(
+                                                  color: Colors.white,
+                                                  fontWeight: FontWeight.bold,
+                                                  fontSize: 11,
+                                                ),
+                                              ),
+                                            ),
+                                          ),
+                                        ),
+                                        Spacer(
+                                          flex: 1,
+                                        ),
+                                        Text('GOOD',
+                                            style: TextStyle(
+                                              fontSize: 11,
+                                              color: Color.fromARGB(
+                                                  255, 120, 236, 223),
+                                            )),
+                                        Spacer(
+                                          flex: 3,
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                  Container(
+                                    height: MediaQuery.of(context).size.height *
+                                        0.08,
+                                    decoration: BoxDecoration(),
+                                    width:
+                                        MediaQuery.of(context).size.width * 0.7,
+                                    child: Column(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.spaceBetween,
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      children: [
+                                        Text(
+                                          'Perencanaan Tata Kelola Ketenagakerjaan',
+                                          style: TextStyle(
+                                              fontWeight: FontWeight.bold),
+                                        ),
+                                        Row(
+                                          children: [
+                                            Container(
+                                              width: MediaQuery.of(context)
+                                                      .size
+                                                      .width *
+                                                  0.2,
+                                              height: MediaQuery.of(context)
+                                                      .size
+                                                      .height *
+                                                  0.025,
+                                              decoration: BoxDecoration(
+                                                  borderRadius:
+                                                      BorderRadius.circular(3),
+                                                  color: Color.fromARGB(
+                                                      255, 249, 239, 221)),
+                                              child: Center(
+                                                child: Text(
+                                                  'MUTU : 0.0',
+                                                  style: TextStyle(
+                                                      fontSize: 12.5,
+                                                      color: Colors.amber[700]),
+                                                ),
+                                              ),
+                                            ),
+                                            Container(
+                                              margin: EdgeInsets.only(left: 10),
+                                              child: Text(
+                                                '3 SKS',
+                                                style: TextStyle(
+                                                    fontSize: 12,
+                                                    color: Colors.grey[400]),
+                                              ),
+                                            )
+                                          ],
+                                        )
+                                      ],
+                                    ),
+                                  )
+                                ],
+                              ),
+                              Divider()
+                            ],
+                          ),
+                        ),
+                        Container(
+                          child: Column(
+                            children: [
+                              Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: [
+                                  Container(
+                                    width: MediaQuery.of(context).size.width *
+                                        0.175,
+                                    height: MediaQuery.of(context).size.height *
+                                        0.09,
+                                    decoration: BoxDecoration(
+                                        color:
+                                            Color.fromARGB(255, 221, 255, 222),
+                                        borderRadius:
+                                            BorderRadius.circular(10)),
+                                    child: Column(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.center,
+                                      children: [
+                                        Spacer(
+                                          flex: 3,
+                                        ),
+                                        Container(
+                                          decoration: BoxDecoration(),
+                                          width: MediaQuery.of(context)
+                                                  .size
+                                                  .width *
+                                              0.055,
+                                          height: MediaQuery.of(context)
+                                                  .size
+                                                  .height *
+                                              0.03,
+                                          child: Container(
+                                            decoration: BoxDecoration(
+                                                color: Colors.green,
+                                                borderRadius:
+                                                    BorderRadius.circular(3.5)),
+                                            child: Center(
+                                              child: Text(
+                                                'B',
+                                                style: TextStyle(
+                                                  color: Colors.white,
+                                                  fontWeight: FontWeight.bold,
+                                                  fontSize: 11,
+                                                ),
+                                              ),
+                                            ),
+                                          ),
+                                        ),
+                                        Spacer(flex: 1),
+                                        Text('NOT BAD',
+                                            style: TextStyle(
+                                              fontSize: 11,
+                                              color: Colors.green,
+                                            )),
+                                        Spacer(
+                                          flex: 3,
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                  Container(
+                                    height: MediaQuery.of(context).size.height *
+                                        0.08,
+                                    decoration: BoxDecoration(),
+                                    width:
+                                        MediaQuery.of(context).size.width * 0.7,
+                                    child: Column(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.spaceBetween,
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      children: [
+                                        Text(
+                                          'Management Pelayanan Publik',
+                                          style: TextStyle(
+                                              fontWeight: FontWeight.bold),
+                                        ),
+                                        Row(
+                                          children: [
+                                            Container(
+                                              width: MediaQuery.of(context)
+                                                      .size
+                                                      .width *
+                                                  0.2,
+                                              height: MediaQuery.of(context)
+                                                      .size
+                                                      .height *
+                                                  0.025,
+                                              decoration: BoxDecoration(
+                                                  borderRadius:
+                                                      BorderRadius.circular(3),
+                                                  color: Color.fromARGB(
+                                                      255, 249, 239, 221)),
+                                              child: Center(
+                                                child: Text(
+                                                  'MUTU : 0.0',
+                                                  style: TextStyle(
+                                                      fontSize: 12.5,
+                                                      color: Colors.amber[700]),
+                                                ),
+                                              ),
+                                            ),
+                                            Container(
+                                              margin: EdgeInsets.only(left: 10),
+                                              child: Text(
+                                                '3 SKS',
+                                                style: TextStyle(
+                                                    fontSize: 12,
+                                                    color: Colors.grey[400]),
+                                              ),
+                                            )
+                                          ],
+                                        )
+                                      ],
+                                    ),
+                                  )
+                                ],
+                              ),
+                              Divider()
+                            ],
+                          ),
+                        ),
+                        Container(
+                          child: Column(
+                            children: [
+                              Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: [
+                                  Container(
+                                    width: MediaQuery.of(context).size.width *
+                                        0.175,
+                                    height: MediaQuery.of(context).size.height *
+                                        0.09,
+                                    decoration: BoxDecoration(
+                                        color:
+                                            Color.fromARGB(255, 235, 255, 216),
+                                        borderRadius:
+                                            BorderRadius.circular(10)),
+                                    child: Column(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.center,
+                                      children: [
+                                        Spacer(flex: 3),
+                                        Container(
+                                          decoration: BoxDecoration(),
+                                          width: MediaQuery.of(context)
+                                                  .size
+                                                  .width *
+                                              0.055,
+                                          height: MediaQuery.of(context)
+                                                  .size
+                                                  .height *
+                                              0.03,
+                                          child: Container(
+                                            decoration: BoxDecoration(
+                                                color: Color.fromARGB(
+                                                    255, 185, 236, 127),
+                                                borderRadius:
+                                                    BorderRadius.circular(3.5)),
+                                            child: Center(
+                                              child: Text(
+                                                'BC',
+                                                style: TextStyle(
+                                                  color: Colors.white,
+                                                  fontWeight: FontWeight.bold,
+                                                  fontSize: 11,
+                                                ),
+                                              ),
+                                            ),
+                                          ),
+                                        ),
+                                        Spacer(flex: 1),
+                                        Text(
+                                          'Hmmm',
+                                          style: TextStyle(
+                                            fontSize: 11,
+                                            color: Color.fromARGB(
+                                                255, 185, 236, 127),
+                                          ),
+                                        ),
+                                        Spacer(flex: 3),
+                                      ],
+                                    ),
+                                  ),
+                                  Container(
+                                    height: MediaQuery.of(context).size.height *
+                                        0.08,
+                                    decoration: BoxDecoration(),
+                                    width:
+                                        MediaQuery.of(context).size.width * 0.7,
+                                    child: Column(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.spaceBetween,
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      children: [
+                                        Text(
+                                          'Pemrograman WEB',
+                                          style: TextStyle(
+                                              fontWeight: FontWeight.bold),
+                                        ),
+                                        Row(
+                                          children: [
+                                            Container(
+                                              width: MediaQuery.of(context)
+                                                      .size
+                                                      .width *
+                                                  0.2,
+                                              height: MediaQuery.of(context)
+                                                      .size
+                                                      .height *
+                                                  0.025,
+                                              decoration: BoxDecoration(
+                                                  borderRadius:
+                                                      BorderRadius.circular(3),
+                                                  color: Color.fromARGB(
+                                                      255, 249, 239, 221)),
+                                              child: Center(
+                                                child: Text(
+                                                  'MUTU : 0.0',
+                                                  style: TextStyle(
+                                                      fontSize: 12.5,
+                                                      color: Colors.amber[700]),
+                                                ),
+                                              ),
+                                            ),
+                                            Container(
+                                              margin: EdgeInsets.only(left: 10),
+                                              child: Text(
+                                                '3 SKS',
+                                                style: TextStyle(
+                                                    fontSize: 12,
+                                                    color: Colors.grey[400]),
+                                              ),
+                                            )
+                                          ],
+                                        )
+                                      ],
+                                    ),
+                                  )
+                                ],
+                              ),
+                              Divider()
+                            ],
+                          ),
+                        ),
+                        Container(
+                          child: Column(
+                            children: [
+                              Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: [
+                                  Container(
+                                    width: MediaQuery.of(context).size.width *
+                                        0.175,
+                                    height: MediaQuery.of(context).size.height *
+                                        0.09,
+                                    decoration: BoxDecoration(
+                                        color:
+                                            Color.fromARGB(255, 255, 253, 234),
+                                        borderRadius:
+                                            BorderRadius.circular(10)),
+                                    child: Column(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.center,
+                                      children: [
+                                        Spacer(flex: 3),
+                                        Container(
+                                          decoration: BoxDecoration(),
+                                          width: MediaQuery.of(context)
+                                                  .size
+                                                  .width *
+                                              0.055,
+                                          height: MediaQuery.of(context)
+                                                  .size
+                                                  .height *
+                                              0.03,
+                                          child: Container(
+                                            decoration: BoxDecoration(
+                                                color: Colors.yellow,
+                                                borderRadius:
+                                                    BorderRadius.circular(3.5)),
+                                            child: Center(
+                                              child: Text(
+                                                'C',
+                                                style: TextStyle(
+                                                  color: Colors.white,
+                                                  fontWeight: FontWeight.bold,
+                                                  fontSize: 11,
+                                                ),
+                                              ),
+                                            ),
+                                          ),
+                                        ),
+                                        Spacer(flex: 1),
+                                        Text('BAD',
+                                            style: TextStyle(
+                                              fontSize: 11,
+                                              color: Colors.yellow,
+                                            )),
+                                        Spacer(flex: 3),
+                                      ],
+                                    ),
+                                  ),
+                                  Container(
+                                    height: MediaQuery.of(context).size.height *
+                                        0.08,
+                                    decoration: BoxDecoration(),
+                                    width:
+                                        MediaQuery.of(context).size.width * 0.7,
+                                    child: Column(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.spaceBetween,
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      children: [
+                                        Text(
+                                          'Arsitektur dan Organisasi Komputer',
+                                          style: TextStyle(
+                                              fontWeight: FontWeight.bold),
+                                        ),
+                                        Row(
+                                          children: [
+                                            Container(
+                                              width: MediaQuery.of(context)
+                                                      .size
+                                                      .width *
+                                                  0.2,
+                                              height: MediaQuery.of(context)
+                                                      .size
+                                                      .height *
+                                                  0.025,
+                                              decoration: BoxDecoration(
+                                                  borderRadius:
+                                                      BorderRadius.circular(3),
+                                                  color: Color.fromARGB(
+                                                      255, 249, 239, 221)),
+                                              child: Center(
+                                                child: Text(
+                                                  'MUTU : 0.0',
+                                                  style: TextStyle(
+                                                      fontSize: 12.5,
+                                                      color: Colors.amber[700]),
+                                                ),
+                                              ),
+                                            ),
+                                            Container(
+                                              margin: EdgeInsets.only(left: 10),
+                                              child: Text(
+                                                '3 SKS',
+                                                style: TextStyle(
+                                                    fontSize: 12,
+                                                    color: Colors.grey[400]),
+                                              ),
+                                            )
+                                          ],
+                                        )
+                                      ],
+                                    ),
+                                  )
+                                ],
+                              ),
+                              Divider()
+                            ],
+                          ),
+                        ),
+                        Container(
+                          child: Column(
+                            children: [
+                              Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: [
+                                  Container(
+                                    width: MediaQuery.of(context).size.width *
+                                        0.175,
+                                    height: MediaQuery.of(context).size.height *
+                                        0.09,
+                                    decoration: BoxDecoration(
+                                        color:
+                                            Color.fromARGB(255, 247, 239, 228),
+                                        borderRadius:
+                                            BorderRadius.circular(10)),
+                                    child: Column(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.center,
+                                      children: [
+                                        Spacer(
+                                          flex: 3,
+                                        ),
+                                        Container(
+                                          decoration: BoxDecoration(),
+                                          width: MediaQuery.of(context)
+                                                  .size
+                                                  .width *
+                                              0.055,
+                                          height: MediaQuery.of(context)
+                                                  .size
+                                                  .height *
+                                              0.03,
+                                          child: Container(
+                                            decoration: BoxDecoration(
+                                                color: Colors.orange,
+                                                borderRadius:
+                                                    BorderRadius.circular(3.5)),
+                                            child: Center(
+                                              child: Text(
+                                                'D',
+                                                style: TextStyle(
+                                                  color: Colors.white,
+                                                  fontWeight: FontWeight.bold,
+                                                  fontSize: 11,
+                                                ),
+                                              ),
+                                            ),
+                                          ),
+                                        ),
+                                        Spacer(flex: 1),
+                                        Text('VERY BAD',
+                                            style: TextStyle(
+                                              fontSize: 11,
+                                              color: Colors.orange,
+                                            )),
+                                        Spacer(flex: 3),
+                                      ],
+                                    ),
+                                  ),
+                                  Container(
+                                    height: MediaQuery.of(context).size.height *
+                                        0.08,
+                                    decoration: BoxDecoration(),
+                                    width:
+                                        MediaQuery.of(context).size.width * 0.7,
+                                    child: Column(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.spaceBetween,
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      children: [
+                                        Text(
+                                          'Pemrograman Citra Digital Komputer',
+                                          style: TextStyle(
+                                              fontWeight: FontWeight.bold),
+                                        ),
+                                        Row(
+                                          children: [
+                                            Container(
+                                              width: MediaQuery.of(context)
+                                                      .size
+                                                      .width *
+                                                  0.2,
+                                              height: MediaQuery.of(context)
+                                                      .size
+                                                      .height *
+                                                  0.025,
+                                              decoration: BoxDecoration(
+                                                  borderRadius:
+                                                      BorderRadius.circular(3),
+                                                  color: Color.fromARGB(
+                                                      255, 249, 239, 221)),
+                                              child: Center(
+                                                child: Text(
+                                                  'MUTU : 0.0',
+                                                  style: TextStyle(
+                                                      fontSize: 12.5,
+                                                      color: Colors.amber[700]),
+                                                ),
+                                              ),
+                                            ),
+                                            Container(
+                                              margin: EdgeInsets.only(left: 10),
+                                              child: Text(
+                                                '3 SKS',
+                                                style: TextStyle(
+                                                    fontSize: 12,
+                                                    color: Colors.grey[400]),
+                                              ),
+                                            )
+                                          ],
+                                        )
+                                      ],
+                                    ),
+                                  )
+                                ],
+                              ),
+                              Divider()
+                            ],
+                          ),
+                        ),
+                        Container(
+                          child: Column(
+                            children: [
+                              Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: [
+                                  Container(
+                                    width: MediaQuery.of(context).size.width *
+                                        0.175,
+                                    height: MediaQuery.of(context).size.height *
+                                        0.09,
+                                    decoration: BoxDecoration(
+                                        color:
+                                            Color.fromARGB(255, 245, 222, 221),
+                                        borderRadius:
+                                            BorderRadius.circular(10)),
+                                    child: Column(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.center,
+                                      children: [
+                                        Spacer(
+                                          flex: 3,
+                                        ),
+                                        Container(
+                                          decoration: BoxDecoration(),
+                                          width: MediaQuery.of(context)
+                                                  .size
+                                                  .width *
+                                              0.055,
+                                          height: MediaQuery.of(context)
+                                                  .size
+                                                  .height *
+                                              0.03,
+                                          child: Container(
+                                            decoration: BoxDecoration(
+                                                color: Colors.red,
+                                                borderRadius:
+                                                    BorderRadius.circular(3.5)),
+                                            child: Center(
+                                              child: Text(
+                                                'E',
+                                                style: TextStyle(
+                                                  color: Colors.white,
+                                                  fontWeight: FontWeight.bold,
+                                                  fontSize: 11,
+                                                ),
+                                              ),
+                                            ),
+                                          ),
+                                        ),
+                                        Spacer(flex: 1),
+                                        Text('DUDE!',
+                                            style: TextStyle(
+                                              fontSize: 11,
+                                              color: Colors.red,
+                                            )),
+                                        Spacer(flex: 3),
+                                      ],
+                                    ),
+                                  ),
+                                  Container(
+                                    height: MediaQuery.of(context).size.height *
+                                        0.08,
+                                    decoration: BoxDecoration(),
+                                    width:
+                                        MediaQuery.of(context).size.width * 0.7,
+                                    child: Column(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.spaceBetween,
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      children: [
+                                        Text(
+                                          'Pemrograman FrameWork',
+                                          style: TextStyle(
+                                              fontWeight: FontWeight.bold),
+                                        ),
+                                        Row(
+                                          children: [
+                                            Container(
+                                              width: MediaQuery.of(context)
+                                                      .size
+                                                      .width *
+                                                  0.2,
+                                              height: MediaQuery.of(context)
+                                                      .size
+                                                      .height *
+                                                  0.025,
+                                              decoration: BoxDecoration(
+                                                  borderRadius:
+                                                      BorderRadius.circular(3),
+                                                  color: Color.fromARGB(
+                                                      255, 249, 239, 221)),
+                                              child: Center(
+                                                child: Text(
+                                                  'MUTU : 0.0',
+                                                  style: TextStyle(
+                                                      fontSize: 12.5,
+                                                      color: Colors.amber[700]),
+                                                ),
+                                              ),
+                                            ),
+                                            Container(
+                                              margin: EdgeInsets.only(left: 10),
+                                              child: Text(
+                                                '3 SKS',
+                                                style: TextStyle(
+                                                    fontSize: 12,
+                                                    color: Colors.grey[400]),
+                                              ),
+                                            )
+                                          ],
+                                        )
+                                      ],
+                                    ),
+                                  )
+                                ],
+                              ),
+                              Divider()
+                            ],
+                          ),
+                        ),
+                        Container(
+                          child: Column(
+                            children: [
+                              Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: [
+                                  Container(
+                                    width: MediaQuery.of(context).size.width *
+                                        0.175,
+                                    height: MediaQuery.of(context).size.height *
+                                        0.09,
+                                    decoration: BoxDecoration(
+                                        color:
+                                            Color.fromARGB(255, 250, 250, 250),
+                                        borderRadius:
+                                            BorderRadius.circular(10)),
+                                    child: Column(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.center,
+                                      children: [
+                                        Spacer(
+                                          flex: 3,
+                                        ),
+                                        Container(
+                                          decoration: BoxDecoration(),
+                                          width: MediaQuery.of(context)
+                                                  .size
+                                                  .width *
+                                              0.055,
+                                          height: MediaQuery.of(context)
+                                                  .size
+                                                  .height *
+                                              0.03,
+                                          child: Container(
+                                            decoration: BoxDecoration(
+                                                color: Colors.grey,
+                                                borderRadius:
+                                                    BorderRadius.circular(3.5)),
+                                            child: Center(
+                                              child: Text(
+                                                'F',
+                                                style: TextStyle(
+                                                  color: Colors.white,
+                                                  fontWeight: FontWeight.bold,
+                                                  fontSize: 11,
+                                                ),
+                                              ),
+                                            ),
+                                          ),
+                                        ),
+                                        Spacer(flex: 1),
+                                        Text('TBD',
+                                            style: TextStyle(
+                                              fontSize: 11,
+                                              color: Colors.grey,
+                                            )),
+                                        Spacer(flex: 3),
+                                      ],
+                                    ),
+                                  ),
+                                  Container(
+                                    height: MediaQuery.of(context).size.height *
+                                        0.08,
+                                    decoration: BoxDecoration(),
+                                    width:
+                                        MediaQuery.of(context).size.width * 0.7,
+                                    child: Column(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.spaceBetween,
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      children: [
+                                        Text(
+                                          'Matematika Diskrit Lanjut 1,2,3',
                                           style: TextStyle(
                                               fontWeight: FontWeight.bold),
                                         ),
